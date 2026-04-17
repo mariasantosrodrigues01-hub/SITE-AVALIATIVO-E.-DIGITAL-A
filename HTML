@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consciência e Igualdade | Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav aria-label="Menu Principal">
+            <div class="logo">Igualdade<span>Racial</span></div>
+            <div class="accessibility-controls">
+                <button id="increase-font" aria-label="Aumentar fonte">A+</button>
+                <button id="decrease-font" aria-label="Diminuir fonte">A-</button>
+                <button id="toggle-contrast" aria-label="Alternar Alto Contraste">
+                    <span class="icon"></span> Contraste
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container">
+                <h1 id="hero-title">Entendendo a Desigualdade Racial</h1>
+                <p>Dados, história e a luta por um futuro equitativo para todos.</p>
+            </div>
+        </section>
+
+        <section id="data-section" class="container reveal" aria-labelledby="stats-title">
+            <h2 id="stats-title">Estatísticas Atuais</h2>
+            <div id="cards-container" class="grid-layout">
+                </div>
+        </section>
+
+        <section class="carousel-section reveal" aria-label="Galeria de Informações">
+            <div class="carousel-container">
+                <div id="carousel-track" class="carousel-track">
+                    </div>
+                <div class="carousel-nav">
+                    <button id="prev-slide" aria-label="Slide anterior">❮</button>
+                    <button id="next-slide" aria-label="Próximo slide">❯</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="container reveal" aria-labelledby="faq-title">
+            <h2 id="faq-title">Perguntas e Respostas</h2>
+            <div id="accordion-container">
+                </div>
+        </section>
+    </main>
+
+    <footer class="container">
+        <p>&copy; 2023 Projeto Igualdade Racial. Conteúdo focado em educação e justiça social.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
