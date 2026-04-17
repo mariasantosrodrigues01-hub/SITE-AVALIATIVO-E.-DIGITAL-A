@@ -1,0 +1,138 @@
+/* =========================================
+   VARIÁVEIS E DESIGN SYSTEM
+   ========================================= */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #e67e22;
+    --bg-color: #f4f4f4;
+    --text-color: #333;
+    --white: #ffffff;
+    --radius: 8px;
+    --spacing: 1.5rem;
+    --transition: all 0.3s ease;
+    --font-base: 16px;
+}
+
+/* ALTO CONTRASTE */
+body.high-contrast {
+    --primary-color: #ffff00;
+    --secondary-color: #ffff00;
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --white: #000000;
+}
+
+/* =========================================
+   RESET E BASE
+   ========================================= */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: var(--font-base);
+    transition: background 0.3s, color 0.3s;
+}
+
+.container {
+    padding: var(--spacing);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   LAYOUT (GRID & FLEXBOX)
+   ========================================= */
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem var(--spacing);
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Mobile First Grid */
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr; /* Uma coluna no mobile */
+    gap: var(--spacing);
+}
+
+/* Tablet / Desktop Grid - Edite aqui as colunas */
+@media (min-width: 768px) {
+    .grid-layout {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+/* =========================================
+   COMPONENTES
+   ========================================= */
+.card {
+    background: var(--white);
+    padding: var(--spacing);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border: 1px solid var(--primary-color);
+}
+
+/* Carrossel */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    background: var(--primary-color);
+    color: white;
+    padding: 3rem 0;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    text-align: center;
+    padding: 0 10%;
+}
+
+/* Acordeão */
+.accordion-item {
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid var(--text-color);
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 1rem;
+    text-align: left;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.accordion-content {
+    display: none;
+    padding: 1rem;
+}
+
+.accordion-content.active { display: block; }
+
+/* =========================================
+   ANIMAÇÕES (SCROLL REVEAL)
+   ========================================= */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
